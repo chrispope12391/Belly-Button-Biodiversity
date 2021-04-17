@@ -1,10 +1,30 @@
 console.log("app.js loaded");
 
+function DrawBargraph(sampleId) {
+    console.log(`DrawBargraph(${sampleId})`);
+}
+
+function DrawBubblechart(sampleId) {
+    console.log(`DrawBubblechart(${sampleId})`);
+}
+
+function ShowMetadata(sampleId) {
+    console.log(`ShowMetadata(${sampleId})`);
+}
+
+function optionChanged(newSampleId) {
+    console.log(`User Selected ${newSampleId}`);
+
+    DrawBargraph(newSampleId);
+    DrawBubblechart(newSampleId);
+    ShowMetadata(newSampleId);
+}
+
 function initDashboard() {
     console.log("initDashboard()");
 
     //populate the dropdown
-    var selector = d3.select("#seldataset");
+    var selector = d3.select("#selDataset");
 
     // comes from office hours with Dom
     d3.json("data/samples.json").then(data => {
@@ -18,6 +38,14 @@ function initDashboard() {
             .property("value", sampleId);
 
         });
+
+        var id = sampleNames[0];
+
+        DrawBargraph(id);
+        DrawBubblechart(id);
+        ShowMetadata(id);
+
+
     });
 
     //updated the bargraph
