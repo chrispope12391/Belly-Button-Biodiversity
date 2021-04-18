@@ -1,3 +1,4 @@
+// comes from office hours with Dom
 console.log("app.js loaded");
 
 function DrawBargraph(sampleId) {
@@ -14,7 +15,7 @@ function DrawBargraph(sampleId) {
         var otu_labels = result.otu_labels;
         var sample_values = result.sample_values;
 
-        yticks = otu_ids.slice(0,10).map(otuId => `OTU ${otuID}`).reverse();
+        yticks = otu_ids.slice(0,10).map(otuId => `OTU ${otuId}`).reverse();
 
         var barData = {
             x: sample_values.slice(0,10).reverse(),
@@ -24,7 +25,7 @@ function DrawBargraph(sampleId) {
             orientation: "h"
         }
 
-        var data = [barData];
+        var barArray = [barData];
 
         var barLayout = {
             title: "Top 10 bacteria culutres found",
@@ -39,6 +40,33 @@ function DrawBargraph(sampleId) {
 
 function DrawBubblechart(sampleId) {
     console.log(`DrawBubblechart(${sampleId})`);
+
+    d3.json("data/samples.json").then(data => {
+
+        var samples = data.samples;
+        var resultArray = samples.filter(s => s.id == sampleId);
+        var result = resultArray[0];
+
+        var otu_ids = result.otu_ids;
+        var otu_labels = result.otu_labels;
+        var sample_values = result.sample_values;
+
+        var bubbleData = {
+            x: otu_ids,
+            y: sample_values,
+            text: otu_labels,
+            mode: "markers",
+            marker : {
+                size: sample_values,
+                color: otu_ids
+            }
+        };
+
+        var bubbleArray = [bubbleData];
+
+        Plotly.newPlot("bubble", bubbleArray);
+
+    });
 }
 
 function ShowMetadata(sampleId) {
