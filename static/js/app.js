@@ -64,13 +64,42 @@ function DrawBubblechart(sampleId) {
 
         var bubbleArray = [bubbleData];
 
-        Plotly.newPlot("bubble", bubbleArray);
+        var bubbleLayout = {
+            title: "Sample Values vs OTU Ids",
+            xaxis: { title: "OTU ID"},
+            yaxis: { title: "Sample Value"}
+        }
+
+        Plotly.newPlot("bubble", bubbleArray, bubbleLayout);
 
     });
 }
 
 function ShowMetadata(sampleId) {
     console.log(`ShowMetadata(${sampleId})`);
+
+    d3.json("data/samples.json").then(data => {
+
+        var metadata = data.metadata;
+        var metaArray = metadata.filter (m => m.id == sampleId);
+        var meta = metaArray[0];
+
+        var meta_id = meta.id;
+        var meta_ethnicity = meta.ethnicity;
+        var meta_gender = meta.gender;
+        var meta_age = meta.age;
+        var meta_location = meta.location;
+        var meta_bbtype = meta.bbtype;
+        var meta_wfreq = meta.wfreq;
+
+        var ul = d3.select("#sample-metadata").append("ul")
+        .selectAll("li")
+        .each(function(d, i) {
+            console.log("element", this);
+            console.log("data", d);
+            console.log("index", i);
+        });
+    });
 }
 
 function optionChanged(newSampleId) {
