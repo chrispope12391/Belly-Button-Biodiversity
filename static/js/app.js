@@ -5,7 +5,7 @@ function DrawBargraph(sampleId) {
     console.log(`DrawBargraph(${sampleId})`);
 
     d3.json("data/samples.json").then(data => {
-        // console.log(data);
+        console.log(data);
 
         var samples = data.samples;
         var resultArray = samples.filter(s => s.id == sampleId);
