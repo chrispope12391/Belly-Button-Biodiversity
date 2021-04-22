@@ -84,6 +84,8 @@ function ShowMetadata(sampleId) {
         var metaArray = metadata.filter (m => m.id == sampleId);
         var meta = metaArray[0];
 
+        console.log(meta);
+
         var meta_id = meta.id;
         var meta_ethnicity = meta.ethnicity;
         var meta_gender = meta.gender;
@@ -92,12 +94,15 @@ function ShowMetadata(sampleId) {
         var meta_bbtype = meta.bbtype;
         var meta_wfreq = meta.wfreq;
 
-        var ul = d3.select("#sample-metadata").append("ul")
+        var arr = [meta_id, meta_ethnicity];
+
+        d3.select("#sample-metadata").append("ul")
         .selectAll("li")
-        .each(function(d, i) {
-            console.log("element", this);
-            console.log("data", d);
-            console.log("index", i);
+        .data(arr)
+        .enter()
+        .append("li")
+        .text(function(d,i) {
+            return d;
         });
     });
 }
