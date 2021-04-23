@@ -60,3 +60,17 @@ The final visual would be a gauge chart that plots the weekly washing frequency 
 ## Dataset
 
 * [samples.json](https://github.com/chrispope12391/Belly-Button-Biodiversity/blob/main/data/samples.json)
+
+## Deployment
+The deployed repo can be accessed through the link below:
+
+## Languages
+* HTML
+* Javascript
+* CSS
+
+## Author(s)
+* Chris Pope
+
+## Contact:
+__Email:__popex107@umn.edu
