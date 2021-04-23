@@ -17,17 +17,27 @@ function washData(sampleId) {
             {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: meta_wfreq,
-                title: { text: "SBelly Button Washing Frequency" },
+                title: { text: "Belly Button Washing Frequency"},
                 type: "indicator",
                 mode: "gauge+number"
             }
         ];
         
-        var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+        var layout = { 
+            width: 600, 
+            height: 500, 
+            margin: { t: 5, b: 0 } };
         Plotly.newPlot('gauge', data, layout);
 
     });
 };
+
+function optionChanged(newSampleId) {
+    console.log(`User Selected ${newSampleId}`);
+
+    washData(newSampleId);
+
+}
 
 function initDashboard() {
     console.log("initDashboard()");
