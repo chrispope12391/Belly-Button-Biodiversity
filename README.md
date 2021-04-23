@@ -37,3 +37,26 @@ Once populated the bubble chart would look as follows:
 
 <img width="1416" alt="bubble_chart" src="https://user-images.githubusercontent.com/75814760/115807713-c33b1c00-a3ae-11eb-9c31-7f59f68954fe.png">
 
+#### Demographic Display
+The next visual would be a demographic info section which displays the individual's information associated with the selected Id No. Each Id No. would show:
+
+* Id Number
+* Ethinicity
+* Gender
+* Age
+* Location
+* Belly Button Type
+* Wash Frequency
+
+Once populated the demographic section would look as follows:
+
+![hw03](https://user-images.githubusercontent.com/75814760/115808211-afdc8080-a3af-11eb-87d2-68eaa5003dbc.png)
+
+#### Gauge Chart
+The final visual would be a gauge chart that plots the weekly washing frequency of the individual. The gauge chart would be populated using the Wash Frequency value. Once populated the gauge chart would look similarly to this:
+
+<img width="384" alt="gauge" src="https://user-images.githubusercontent.com/75814760/115808584-56288600-a3b0-11eb-9814-09f244b9d332.png">
+
+## Dataset
+
+* [samples.json](https://github.com/chrispope12391/Belly-Button-Biodiversity/blob/main/data/samples.json)
