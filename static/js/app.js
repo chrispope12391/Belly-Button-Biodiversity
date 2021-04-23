@@ -64,6 +64,7 @@ function DrawBubblechart(sampleId) {
 
         var bubbleArray = [bubbleData];
 
+
         var bubbleLayout = {
             title: "Sample Values vs OTU Ids",
             xaxis: { title: "OTU ID"},
@@ -84,8 +85,6 @@ function ShowMetadata(sampleId) {
         var metaArray = metadata.filter (m => m.id == sampleId);
         var meta = metaArray[0];
 
-        console.log(meta);
-
         var meta_id = meta.id;
         var meta_ethnicity = meta.ethnicity;
         var meta_gender = meta.gender;
@@ -94,16 +93,17 @@ function ShowMetadata(sampleId) {
         var meta_bbtype = meta.bbtype;
         var meta_wfreq = meta.wfreq;
 
-        var arr = [meta_id, meta_ethnicity];
+        var select = d3.select("#sample-metadata")
 
-        d3.select("#sample-metadata").append("ul")
-        .selectAll("li")
-        .data(arr)
-        .enter()
-        .append("li")
-        .text(function(d,i) {
-            return d;
-        });
+        select.html("");
+
+        select.append('ul').text(`ID: ${meta_id}`);
+        select.append('ul').text(`Ethnicity: ${meta_ethnicity}`);
+        select.append('ul').text(`Gender: ${meta_gender}`);
+        select.append('ul').text(`Age: ${meta_age}`);
+        select.append('ul').text(`Location: ${meta_location}`);
+        select.append('ul').text(`bbtype: ${meta_bbtype}`);
+        select.append('ul').text(`wfreq: ${meta_wfreq}`);
     });
 }
 
