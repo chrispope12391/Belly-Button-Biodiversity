@@ -97,11 +97,11 @@ function ShowMetadata(sampleId) {
 
         select.html("");
 
-        select.append('ul').text(`ID: ${meta_id}`);
-        select.append('ul').text(`Ethnicity: ${meta_ethnicity}`);
-        select.append('ul').text(`Gender: ${meta_gender}`);
-        select.append('ul').text(`Age: ${meta_age}`);
-        select.append('ul').text(`Location: ${meta_location}`);
+        select.append('ul').text(`id: ${meta_id}`);
+        select.append('ul').text(`ethnicity: ${meta_ethnicity}`);
+        select.append('ul').text(`gender: ${meta_gender}`);
+        select.append('ul').text(`age: ${meta_age}`);
+        select.append('ul').text(`location: ${meta_location}`);
         select.append('ul').text(`bbtype: ${meta_bbtype}`);
         select.append('ul').text(`wfreq: ${meta_wfreq}`);
     });
