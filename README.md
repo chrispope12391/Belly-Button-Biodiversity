@@ -13,4 +13,9 @@ Build an interactive dashboard to explore the Belly Button Biodiversity dataset,
 1. Push the above changes to GitHub.
 
 ## Summary
-1. Using the D3 library, create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+The objective of this project was to create 4 visual representations of the Belly Button Biodiversity dataset. The visuals would be populated by the dataset and everytime a new Test Subject Id No. was choosen (via dropdown selection) the visuals would change and be populated by the data associated with the specified Id No.
+
+1. Using the D3 library, the first visual to create would be a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual. The horizontal bar chart was built using the following values:
+    *sample_values as the values for the bar chart
+    * otu_ids as the labels for the bar chart
+    *otu_labels as the hovertext for the chart
