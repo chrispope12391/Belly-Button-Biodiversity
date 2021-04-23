@@ -35,8 +35,6 @@ The next visual would be a bubble chart which displays each sample with each bub
 
 Once populated the bubble chart would look as follows:
 
-[Belly Button Diversity](https://chrispope12391.github.io/Belly-Button-Biodiversity/)
-
 <img width="1416" alt="bubble_chart" src="https://user-images.githubusercontent.com/75814760/115807713-c33b1c00-a3ae-11eb-9c31-7f59f68954fe.png">
 
 ### Demographic Display
@@ -65,6 +63,8 @@ The final visual would be a gauge chart that plots the weekly washing frequency 
 
 ## Deployment
 The deployed repo can be accessed through the link below:
+
+* [Belly Button Diversity](https://chrispope12391.github.io/Belly-Button-Biodiversity/)
 
 ## Languages
 * HTML
